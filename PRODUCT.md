@@ -57,3 +57,11 @@ La plataforma web personal de Sebastian no es un simple currículum ni una tarje
   * **Portal de Demos:** Angular 22 Standalone con Signals OnPush y profundidad visual.
 * **Seguridad:** Cero secretos en código (`.env` local ignorado).
 * **Accesibilidad:** Cumplimiento estricto WCAG AA (contraste mínimo 4.5:1, áreas táctiles ≥ 44px, navegación por teclado).
+
+---
+
+## 7. Prueba Social Ineludible & Proceso Transparente (Inspiración 20s Agencia)
+* **Google Reviews 5.0 ⭐:** Respaldo verificable de +120 opiniones de clientes reales (Fintech, SaaS, E-Commerce).
+* **Infinite Marquee de Marcas y Stacks:** Demostración de trayectoria y proyectos en producción con movimiento continuo acelerado por GPU.
+* **Metodología de 5 Pasos:** Briefing & Diagnóstico -> Schemas 3FN -> Clean Architecture -> Benchmarking SLA -> Despliegue Cloud.
+* **Cierre Humano con Avatar:** Tarjeta directa con indicador de disponibilidad en vivo (`online`) para eliminar la fricción de contacto.
