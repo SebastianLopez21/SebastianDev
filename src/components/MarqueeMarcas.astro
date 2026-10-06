@@ -1,0 +1,47 @@
+---
+// src/components/MarqueeMarcas.astro
+// Marquesina Infinita de Marcas, Clientes y Tecnologías de Producción (Inspiración 20s Agencia)
+const marcas = [
+  { nombre: "Cruz Roja Colombiana", tipo: "Solución Web" },
+  { nombre: "Grupo Colpatria", tipo: "Arquitectura Cloud" },
+  { nombre: "Autofinanciera", tipo: "Desarrollo a la Medida" },
+  { nombre: "Cosechas", tipo: "Plataforma Web" },
+  { nombre: ".NET 9 Clean Architecture", tipo: "Core Backend" },
+  { nombre: "Angular 22 Signals", tipo: "Frontend Reactivo" },
+  { nombre: "Neon PostgreSQL", tipo: "Persistencia Serverless" },
+  { nombre: "Oracle Cloud OCI", tipo: "Infraestructura Cloud" },
+  { nombre: "Docker Multi-Stage", tipo: "Containerización" },
+  { nombre: "Redis Caching TTL", tipo: "Optimización de Latencia" }
+];
+---
+
+<div class="py-10 border-y border-white/[0.06] bg-[#0A0D17]/60 overflow-hidden relative backdrop-blur-sm">
+  <!-- Máscara de desvanecimiento a los costados -->
+  <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#07090E] to-transparent z-10 pointer-events-none"></div>
+  <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#07090E] to-transparent z-10 pointer-events-none"></div>
+
+  <!-- Pista de Marquesina -->
+  <div class="animate-marquee flex items-center gap-10">
+    <!-- Primer bucle -->
+    {marcas.map((m) => (
+      <div class="flex items-center gap-3 shrink-0 px-4 py-2 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-cyan-500/30 transition-colors">
+        <span class="text-cyan-400 font-bold text-xs">✦</span>
+        <span class="text-sm font-bold text-white tracking-tight">{m.nombre}</span>
+        <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-white/[0.04] text-slate-400 border border-white/[0.06]">
+          {m.tipo}
+        </span>
+      </div>
+    ))}
+
+    <!-- Segundo bucle para continuidad infinita -->
+    {marcas.map((m) => (
+      <div class="flex items-center gap-3 shrink-0 px-4 py-2 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-cyan-500/30 transition-colors">
+        <span class="text-violet-400 font-bold text-xs">✦</span>
+        <span class="text-sm font-bold text-white tracking-tight">{m.nombre}</span>
+        <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-white/[0.04] text-slate-400 border border-white/[0.06]">
+          {m.tipo}
+        </span>
+      </div>
+    ))}
+  </div>
+</div>

@@ -2,9 +2,13 @@
 // src/pages/index.astro
 import Navbar from '../components/Navbar.astro';
 import HeroBento from '../components/HeroBento.astro';
+import MarqueeMarcas from '../components/MarqueeMarcas.astro';
 import CatalogoProductos from '../components/CatalogoProductos.astro';
+import ProcesoIngenieria from '../components/ProcesoIngenieria.astro';
 import CasosEstudio from '../components/CasosEstudio.astro';
+import ResenasClientes from '../components/ResenasClientes.astro';
 import CotizadorSoftware from '../components/CotizadorSoftware';
+import CierreHumano from '../components/CierreHumano.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
@@ -77,11 +81,20 @@ const urlSitio = "https://sebastian.dev";
       <!-- Hero Bento Section con The Cyber Command Center -->
       <HeroBento />
 
+      <!-- Marquesina Infinita de Marcas, Clientes y Tecnologías -->
+      <MarqueeMarcas />
+
       <!-- Catálogo de Productos y Soluciones a la Medida -->
       <CatalogoProductos />
 
+      <!-- Metodología y Proceso de Ingeniería Paso a Paso -->
+      <ProcesoIngenieria />
+
       <!-- Casos de Estudio de Alto Rendimiento -->
       <CasosEstudio />
+
+      <!-- Prueba Social Verificada: Reseñas Google 5.0 y Testimonios -->
+      <ResenasClientes />
 
       <!-- Elemento Firma: Cotizador Interactivo de Software (React Island) -->
       <section id="cotizador" class="py-16 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto">
@@ -100,6 +113,9 @@ const urlSitio = "https://sebastian.dev";
         <!-- Isla React con hidratación diferida al ser visible -->
         <CotizadorSoftware client:visible />
       </section>
+
+      <!-- Tarjeta de Cierre Humanizada con Avatar y Disponibilidad en Vivo -->
+      <CierreHumano />
     </main>
 
     <!-- Footer -->

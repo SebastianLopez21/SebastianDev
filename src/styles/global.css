@@ -125,6 +125,30 @@
   animation: terminal-blink 0.9s infinite;
 }
 
+/* ==============================================================================
+   Marquesina Infinita (Infinite Marquee) — Acelerada por GPU
+   ============================================================================== */
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 25s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 /* Fallback accesible para reducción de movimiento */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

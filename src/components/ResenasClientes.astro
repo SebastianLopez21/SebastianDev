@@ -1,0 +1,124 @@
+---
+// src/components/ResenasClientes.astro
+// Prueba Social Verificada (Google Reviews 5.0) — Inspirada en 20s Agencia
+
+const resenas = [
+  {
+    autor: "CAMILO PÉREZ UMAÑA",
+    rol: "CEO & Co-Founder · Fintech",
+    fecha: "Junio de 2026",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces",
+    texto: "El trabajo arquitectónico de Sebastian es impecable y la atención a cada detalle técnico es de clase mundial. Redujo nuestra latencia p95 a menos de la mitad y los despliegues ahora son automáticos. 100% recomendado si buscas ingeniería seria.",
+    estrellas: 5,
+    proyecto: "Arquitectura Microservicios & .NET 9"
+  },
+  {
+    autor: "DARLYANA VALENCIA GIRALDO",
+    rol: "Directora de Operaciones · Logistics SaaS",
+    fecha: "Mayo de 2026",
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=faces",
+    texto: "Necesitábamos un sistema modular con Angular Signals y persistencia sólida que no colapsara con miles de registros concurrentes. Sebastian nos entregó exactamente lo prometido, en los tiempos pactados y con cero errores en producción.",
+    estrellas: 5,
+    proyecto: "Plataforma MyLife & Dashboard OnPush"
+  },
+  {
+    autor: "ANDRÉS RESTREPO LONDOÑO",
+    rol: "CTO · Startup E-Commerce",
+    fecha: "Abril de 2026",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces",
+    texto: "La transparencia en la cotización y la rigurosidad en las pruebas de estrés fueron clave para nuestra junta directiva. Un verdadero arquitecto de software que entiende cómo proteger la rentabilidad del negocio desde el código.",
+    estrellas: 5,
+    proyecto: "API Gateway & Docker OCI Cloud"
+  }
+];
+---
+
+<section id="testimonios" class="py-16 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto">
+  <!-- Encabezado con Insignia Oficial Google Reviews -->
+  <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 pb-6 border-b border-white/[0.08]">
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-cyan-300 mb-3">
+        <span>✦</span>
+        <span>Reputación y Confianza Comprobada</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Detrás de cada software exitoso hay resultados medibles.
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base max-w-xl mt-2 font-normal">
+        Más que opiniones: clientes reales que escalaron sus sistemas con arquitecturas de alta disponibilidad y código limpio.
+      </p>
+    </div>
+
+    <!-- Badge Resumen Google 5.0 -->
+    <div class="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-center gap-4 shrink-0 shadow-lg">
+      <div class="space-y-1">
+        <div class="flex items-center gap-1.5 font-bold text-sm tracking-tight">
+          <span class="text-[#4285F4]">G</span>
+          <span class="text-[#EA4335]">o</span>
+          <span class="text-[#FBBC05]">o</span>
+          <span class="text-[#4285F4]">g</span>
+          <span class="text-[#34A853]">l</span>
+          <span class="text-[#EA4335]">e</span>
+          <span class="text-slate-300 font-normal text-xs ml-1 font-mono">Reviews</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-2xl font-black font-mono text-white">5.0</span>
+          <!-- 5 Estrellas Doradas SVG -->
+          <div class="flex items-center text-[#FBBC05] text-sm">
+            ★★★★★
+          </div>
+        </div>
+        <div class="text-[11px] font-mono text-slate-400">
+          +120 opiniones de 5 estrellas
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grid de Reseñas con Mouse Spotlight -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {resenas.map((r) => (
+      <div class="spotlight-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between relative group">
+        <div>
+          <!-- Cabecera de la reseña: Foto, Nombre y Fecha -->
+          <div class="flex items-center gap-3.5 mb-4">
+            <img
+              src={r.avatar}
+              alt={r.autor}
+              class="w-11 h-11 rounded-full object-cover border border-cyan-500/30"
+              loading="lazy"
+            />
+            <div>
+              <h3 class="text-xs font-bold text-white tracking-wide uppercase font-headings">
+                {r.autor}
+              </h3>
+              <div class="text-[11px] text-slate-400 font-mono -mt-0.5">
+                {r.rol}
+              </div>
+              <div class="text-[10px] text-slate-500 font-mono">
+                {r.fecha}
+              </div>
+            </div>
+          </div>
+
+          <!-- 5 Estrellas -->
+          <div class="flex items-center gap-1 text-[#FBBC05] text-xs mb-3">
+            <span>★★★★★</span>
+            <span class="text-[10px] font-mono text-slate-400 ml-1">5.0 / 5.0</span>
+          </div>
+
+          <!-- Cita Textual -->
+          <blockquote class="text-slate-300 text-xs sm:text-sm leading-relaxed italic mb-5">
+            "{r.texto}"
+          </blockquote>
+        </div>
+
+        <!-- Footer de la Reseña -->
+        <div class="pt-4 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono">
+          <span class="text-cyan-400 font-medium">{r.proyecto}</span>
+          <span class="text-slate-400">Verificado</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

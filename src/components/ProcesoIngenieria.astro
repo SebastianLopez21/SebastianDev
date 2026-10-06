@@ -1,0 +1,85 @@
+---
+// src/components/ProcesoIngenieria.astro
+// Metodología y Proceso de Ingeniería Paso a Paso (Inspiración 20s Agencia)
+
+const pasos = [
+  {
+    numero: "01",
+    titulo: "Briefing & Diagnóstico de Cuellos de Botella",
+    descripcion: "Entendemos la lógica de tu negocio, los picos de tráfico proyectados y definimos el SLA de latencia objetivo antes de escribir una sola línea de código.",
+    entregable: "Documento de Arquitectura & SLA"
+  },
+  {
+    numero: "02",
+    titulo: "Modelado de Schemas & Contratos DTO",
+    descripcion: "Diseñamos bases de datos relacionales en 3FN con índices obligatorios en claves foráneas, prevención estricta de consultas N+1 y contratos fuertemente tipados.",
+    entregable: "Diagrama Entidad-Relación & OpenAPI Spec"
+  },
+  {
+    numero: "03",
+    titulo: "Construcción Clean Architecture & Signals",
+    descripcion: "Desarrollo desacoplado: Capa Dominio 100% pura, microservicios asíncronos y componentes frontend con Signals reactivos y ChangeDetectionStrategy.OnPush.",
+    entregable: "Código fuente modular & Tests Unitarios"
+  },
+  {
+    numero: "04",
+    titulo: "Benchmarking Concurrente & Quality Gates",
+    descripcion: "Sometemos el software a pruebas de estrés HTTP bajo miles de peticiones simultáneas, verificando 0.00% de errores 500 y escaneo de cero secretos quemados.",
+    entregable: "Reporte de Carga SLA (p95 < 50ms)"
+  },
+  {
+    numero: "05",
+    titulo: "Containerización Docker & Lanzamiento Cloud",
+    descripcion: "Empaquetamos en imágenes Docker multi-stage de tamaño mínimo (<35MB) y desplegamos en la nube (OCI / Docker Hub) con verificación de salud activa.",
+    entregable: "Sistema en Producción 100% Operativo"
+  }
+];
+---
+
+<section id="metodologia" class="py-16 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto">
+  <!-- Encabezado de Sección -->
+  <div class="mb-14 pb-6 border-b border-white/[0.08]">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-cyan-300 mb-3">
+      <span>✦</span>
+      <span>Metodología Propia & Disciplina de Ingeniería</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+      Un proceso riguroso y transparente, de principio a fin.
+    </h2>
+    <p class="text-slate-400 text-sm sm:text-base max-w-2xl mt-2 font-normal">
+      Cada proyecto sigue las mismas etapas probadas en producción. Cero improvisación, tiempos pactados y el mismo estándar de calidad sin importar la escala.
+    </p>
+  </div>
+
+  <!-- Pasos en Grid Asimétrico / Timeline -->
+  <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+    {pasos.map((p) => (
+      <div class="spotlight-card rounded-3xl p-6 flex flex-col justify-between relative group">
+        <div>
+          <!-- Número de paso con gradiente -->
+          <div class="text-3xl font-black font-mono text-gradient-cyan-violet mb-4">
+            {p.numero}
+          </div>
+
+          <!-- Título del Paso -->
+          <h3 class="text-base font-bold text-white tracking-tight mb-3 leading-snug group-hover:text-cyan-300 transition-colors">
+            {p.titulo}
+          </h3>
+
+          <!-- Descripción -->
+          <p class="text-slate-300 text-xs leading-relaxed mb-6 font-normal">
+            {p.descripcion}
+          </p>
+        </div>
+
+        <!-- Tag Entregable -->
+        <div class="pt-4 border-t border-white/[0.06]">
+          <span class="text-[10px] font-mono uppercase text-slate-400 block mb-1">Entregable:</span>
+          <span class="text-[11px] font-mono text-cyan-400 font-semibold leading-tight block">
+            {p.entregable}
+          </span>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
