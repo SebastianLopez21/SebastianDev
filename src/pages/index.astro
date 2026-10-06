@@ -9,7 +9,7 @@ import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const titulo = "Sebastian | Senior Fullstack Architect & Software Solutions";
-const descripcion = "Diseño arquitecturas escalables, APIs Clean Architecture (.NET, Django, Node) y plataformas web de alto rendimiento con latencias sub-100ms y disponibilidad del 99.99%.";
+const descripcion = "Diseño arquitecturas escalables, APIs Clean Architecture (.NET, Django, Node) y plataformas web de alto rendimiento con latencias sub-50ms y disponibilidad del 99.99%.";
 const urlSitio = "https://sebastian.dev";
 ---
 
@@ -59,13 +59,13 @@ const urlSitio = "https://sebastian.dev";
       ]
     })} />
   </head>
-  <body class="bg-[#090A0F] text-slate-100 min-h-screen relative overflow-x-hidden selection:bg-cyan-400 selection:text-slate-950">
+  <body class="bg-[#07090E] text-slate-100 min-h-screen relative overflow-x-hidden selection:bg-cyan-400 selection:text-slate-950 font-sans">
     <!-- Fondos de atmósfera cinemática (Aurora Mesh) -->
     <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
       <!-- Glow superior cian -->
-      <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[450px] bg-cyan-500/10 blur-[130px] rounded-full"></div>
-      <!-- Glow intermedio índigo -->
-      <div class="absolute top-[40%] right-[-10%] w-[550px] h-[550px] bg-indigo-600/10 blur-[140px] rounded-full"></div>
+      <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[750px] h-[480px] bg-cyan-400/10 blur-[140px] rounded-full"></div>
+      <!-- Glow intermedio violeta espacial -->
+      <div class="absolute top-[40%] right-[-10%] w-[600px] h-[600px] bg-violet-600/10 blur-[150px] rounded-full"></div>
       <!-- Rejilla tecnológica tenue de fondo -->
       <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
     </div>
@@ -74,7 +74,7 @@ const urlSitio = "https://sebastian.dev";
     <Navbar />
 
     <main>
-      <!-- Hero Bento Section -->
+      <!-- Hero Bento Section con The Cyber Command Center -->
       <HeroBento />
 
       <!-- Catálogo de Productos y Soluciones a la Medida -->
@@ -104,5 +104,28 @@ const urlSitio = "https://sebastian.dev";
 
     <!-- Footer -->
     <Footer />
+
+    <!-- Script de seguimiento Mouse Spotlight en todas las tarjetas -->
+    <script>
+      function initSpotlight() {
+        const cards = document.querySelectorAll('.spotlight-card');
+        cards.forEach((card) => {
+          card.addEventListener('mousemove', (e) => {
+            const mouseEvent = e as MouseEvent;
+            const rect = (card as HTMLElement).getBoundingClientRect();
+            const x = mouseEvent.clientX - rect.left;
+            const y = mouseEvent.clientY - rect.top;
+            (card as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
+            (card as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
+          });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSpotlight);
+      } else {
+        initSpotlight();
+      }
+    </script>
   </body>
 </html>

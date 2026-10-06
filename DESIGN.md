@@ -36,27 +36,29 @@
 
 ```css
 :root {
-  /* Fondos y Superficies */
-  --bg-deep:             #090A0F;
-  --bg-surface:          #0F121C;
-  --bg-surface-raised:   #151928;
+  /* Fondos y Superficies (Deep Graphite) */
+  --bg-deep:             #07090E;
+  --bg-surface:          #0C0F1A;
+  --bg-surface-raised:   #121626;
   --border-subtle:       rgba(248, 250, 252, 0.08);
-  --border-hover:        rgba(6, 182, 212, 0.40);
+  --border-glow:         rgba(0, 245, 255, 0.50);
 
   /* Texto */
   --text-main:           #F8FAFC;
   --text-muted:          #94A3B8;
   --text-subtle:         #64748B;
 
-  /* Acentos Cromáticos */
-  --accent-cyan:         #06B6D4; /* Acento de interacción y botones primarios */
-  --accent-indigo:       #6366F1; /* Resplandores y badges secundarios */
-  --status-emerald:      #10B981; /* Disponibilidad activa y métricas óptimas */
-  --status-amber:        #F59E0B; /* Advertencias y tags de catálogo */
+  /* Acentos Cromáticos de Firma */
+  --accent-cyan:         #00F5FF; /* Cian Eléctrico: interacción y glow principal */
+  --accent-violet:       #8B5CF6; /* Violeta Espacial: gradientes y resplandores secundarios */
+  --accent-indigo:       #6366F1; /* Badges y enlaces */
+  --status-emerald:      #10B981; /* Disponibilidad activa y SLA verificado */
+  --status-amber:        #F59E0B; /* Alertas técnicas */
 
-  /* Sombras Tintadas Modernas */
-  --shadow-tinted-cyan:  0 12px 36px -8px rgba(6, 182, 212, 0.25);
-  --shadow-card:         0 8px 30px -4px rgba(0, 0, 0, 0.5);
+  /* Sombras y Halos Tintados */
+  --shadow-spotlight:    0 0 30px -5px rgba(0, 245, 255, 0.25);
+  --shadow-tinted-violet:0 12px 36px -8px rgba(139, 92, 246, 0.25);
+  --shadow-card:         0 8px 32px -4px rgba(0, 0, 0, 0.6);
 }
 ```
 

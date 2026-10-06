@@ -69,10 +69,10 @@ const productos = [
     </div>
   </div>
 
-  <!-- Grid de Productos Bento -->
+  <!-- Grid de Productos Bento con Mouse Spotlight -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     {productos.map((prod) => (
-      <div class="card-hover-lift rounded-3xl p-7 sm:p-8 bg-[#0F121C] border border-white/[0.08] flex flex-col justify-between relative overflow-hidden group">
+      <div class="spotlight-card rounded-3xl p-7 sm:p-8 flex flex-col justify-between relative overflow-hidden group">
         <!-- Resplandor sutil al hover -->
         <div class="absolute -top-20 -right-20 w-48 h-48 rounded-full bg-cyan-500/5 group-hover:bg-cyan-500/10 blur-2xl pointer-events-none transition-colors duration-300"></div>
 
