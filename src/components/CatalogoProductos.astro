@@ -1,0 +1,137 @@
+---
+// src/components/CatalogoProductos.astro
+// Productos de Software a la Medida (SaaS & Templates Pre-construidos)
+const productos = [
+  {
+    id: "mylife",
+    tag: "SaaS / Productividad",
+    badgeColor: "emerald",
+    nombre: "MyLife — Hub de Productividad & Hábitos",
+    descripcion: "Plataforma SaaS con arquitectura reactiva en tiempo real. Diseñada para gestionar proyectos, finanzas personales y seguimiento de hábitos con sincronización continua.",
+    metricas: ["Latencia sub-60ms", "Signals OnPush", "PostgreSQL 16"],
+    stack: [".NET 9 Clean Architecture", "Angular 22 Signals", "Neon Postgres", "Docker"],
+    beneficio: "Listo para desplegar como multi-tenant o adaptar a las necesidades operativas de tu empresa.",
+    cta: "Solicitar Demo & Adaptación"
+  },
+  {
+    id: "parcha2",
+    tag: "Microservicios / Social Hub",
+    badgeColor: "cyan",
+    nombre: "PARCHA2 — Plataforma Social & Eventos",
+    descripcion: "Arquitectura distribuida con gateway desacoplado para alta concurrencia de usuarios, gestión de perfiles, eventos geolocalizados y mensajería en tiempo real.",
+    metricas: ["Gateway desacoplado", "0 caídas concurrentes", "OCI Cloud"],
+    stack: ["Django REST API", "Express Gateway", "PostgreSQL 18", "Docker Compose"],
+    beneficio: "Ideal para comunidades, plataformas de eventos o marketplaces que requieren escalar sin cuellos de botella.",
+    cta: "Explorar Arquitectura"
+  },
+  {
+    id: "ecored",
+    tag: "Trazabilidad / Sustentabilidad",
+    badgeColor: "indigo",
+    nombre: "EcoRed — Sistema de Monitoreo & Trazabilidad",
+    descripcion: "Solución analítica para el registro, auditoría y trazabilidad de impacto y cadenas de suministro sustentables con dashboards ejecutivos de visualización.",
+    metricas: ["100% Data Integrity", "Exportación RFC 7807", "Docker Multi-stage"],
+    stack: ["Clean Architecture", "Angular Standalone", "PostgreSQL", "Redis TTL"],
+    beneficio: "Optimizado para entidades y empresas que necesitan reportar indicadores con rigurosidad técnica.",
+    cta: "Ver Módulos Disponibles"
+  },
+  {
+    id: "landing-factory",
+    tag: "Conversión Rápida / Web Engine",
+    badgeColor: "amber",
+    nombre: "Landing Kit de Alta Conversión (Astro 5)",
+    descripcion: "Motor estático ultra-optimizado con islas interactivas de React y cierre directo a WhatsApp. Calificación 100/100 en Google Lighthouse garantizada.",
+    metricas: ["Lighthouse 100", "Entrega en 48h", "Cero Javascript muerto"],
+    stack: ["Astro 5 Static", "React 19 Islands", "Tailwind v4", "Netlify / Surge"],
+    beneficio: "La máquina de captura definitiva para marcas y creadores que no pueden perder clientes por lentitud.",
+    cta: "Cotizar Landing Page"
+  }
+];
+---
+
+<section id="soluciones" class="py-16 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto">
+  <!-- Encabezado de Sección -->
+  <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4 pb-6 border-b border-white/[0.08]">
+    <div>
+      <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 block mb-2">
+        Software Adaptable & Productos Listos
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Sistemas Pre-Construidos a la Medida
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base max-w-xl mt-2 font-normal">
+        No empieces desde cero. Ahorra meses de desarrollo implementando soluciones probadas en producción, personalizadas para los procesos de tu negocio.
+      </p>
+    </div>
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-slate-300">
+      <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+      <span>4 Soluciones Arquitectónicas Disponibles</span>
+    </div>
+  </div>
+
+  <!-- Grid de Productos Bento -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {productos.map((prod) => (
+      <div class="card-hover-lift rounded-3xl p-7 sm:p-8 bg-[#0F121C] border border-white/[0.08] flex flex-col justify-between relative overflow-hidden group">
+        <!-- Resplandor sutil al hover -->
+        <div class="absolute -top-20 -right-20 w-48 h-48 rounded-full bg-cyan-500/5 group-hover:bg-cyan-500/10 blur-2xl pointer-events-none transition-colors duration-300"></div>
+
+        <div>
+          <!-- Tag superior & métrica rápida -->
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-mono tracking-wide bg-white/[0.05] border border-white/[0.1] text-cyan-300">
+              {prod.tag}
+            </span>
+            <div class="flex items-center gap-1.5 text-[11px] font-mono text-emerald-400">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <span>{prod.metricas[0]}</span>
+            </div>
+          </div>
+
+          <!-- Título y Descripción -->
+          <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight mb-3 group-hover:text-cyan-300 transition-colors duration-200">
+            {prod.nombre}
+          </h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-5">
+            {prod.descripcion}
+          </p>
+
+          <!-- Beneficio de Negocio -->
+          <div class="p-3.5 rounded-2xl bg-white/[0.02] border border-white/[0.05] mb-5">
+            <span class="text-[10px] font-mono uppercase text-slate-400 block mb-1">Impacto de Negocio:</span>
+            <p class="text-xs text-slate-200 font-medium leading-relaxed">
+              {prod.beneficio}
+            </p>
+          </div>
+
+          <!-- Stack Tags -->
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            {prod.stack.map((tech) => (
+              <span class="px-2 py-0.5 rounded-lg text-[11px] font-mono bg-white/[0.03] text-slate-300 border border-white/[0.06]">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <!-- Footer Card con CTA Táctil -->
+        <div class="pt-4 border-t border-white/[0.06] flex items-center justify-between">
+          <a
+            href={`https://wa.me/573000000000?text=${encodeURIComponent(`Hola Sebastian, me interesa conocer más y adaptar el sistema: ${prod.nombre}`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-tactile inline-flex items-center gap-2 text-xs font-bold text-cyan-400 hover:text-cyan-300 group-hover:translate-x-1 transition-transform"
+          >
+            <span>{prod.cta}</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+          <span class="text-[11px] font-mono text-slate-400">
+            Personalizable
+          </span>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

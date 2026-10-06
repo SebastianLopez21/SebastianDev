@@ -1,0 +1,40 @@
+---
+// src/components/Footer.astro
+const anioActual = new Date().getFullYear();
+---
+
+<footer class="mt-20 border-t border-white/[0.08] bg-[#07080D] py-14 px-4 sm:px-6">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+    <!-- Bloque Identidad y Terminal Status -->
+    <div class="space-y-3 text-center md:text-left">
+      <div class="flex items-center justify-center md:justify-start gap-2.5">
+        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+        <span class="font-bold text-white text-base tracking-tight font-headings">
+          Sebastian <span class="text-cyan-400">/</span> Dev
+        </span>
+      </div>
+      <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
+        Arquitectura de software de alta disponibilidad, desarrollo Fullstack y productos pre-construidos adaptables a tu negocio.
+      </p>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-white/[0.03] border border-white/[0.06] text-[11px] font-mono text-slate-400">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Sistemas operativos: 100% SLA</span>
+      </div>
+    </div>
+
+    <!-- Navegación Rápida -->
+    <div class="flex flex-wrap justify-center gap-6 text-xs font-medium text-slate-300">
+      <a href="#soluciones" class="hover:text-cyan-400 transition-colors">Sistemas a la Medida</a>
+      <a href="#casos-estudio" class="hover:text-cyan-400 transition-colors">Casos de Estudio</a>
+      <a href="#cotizador" class="hover:text-cyan-400 transition-colors">Cotizador de Software</a>
+      <a href="https://github.com/sebas" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">GitHub</a>
+      <a href="https://linkedin.com/in/sebas" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">LinkedIn</a>
+    </div>
+
+    <!-- Cierre y Copyright -->
+    <div class="text-center md:text-right text-[11px] font-mono text-slate-400 space-y-1">
+      <div>© {anioActual} Sebastian. Todos los derechos reservados.</div>
+      <div class="text-slate-400">Diseñado bajo Clean Architecture & Emil Kowalski Physics.</div>
+    </div>
+  </div>
+</footer>

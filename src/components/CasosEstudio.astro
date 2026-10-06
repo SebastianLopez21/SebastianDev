@@ -1,0 +1,133 @@
+---
+// src/components/CasosEstudio.astro
+// Casos de Estudio Reales: Problema -> Arquitectura -> Métrica de Producción
+
+const casos = [
+  {
+    id: "mylife-clean-arch",
+    cliente: "MyLife Core Ecosystem",
+    rol: "Arquitecto de Solución & Lead Fullstack",
+    desafio: "Los monolitos tradicionales sufrían degradación de latencia ante el incremento de consultas de usuario, con componentes frontend pesados que re-renderizaban toda la vista ante cualquier cambio de estado.",
+    solucion: "Diseño e implementación de Clean Architecture en .NET 9 con desacoplamiento absoluto de capas de negocio, persistencia en Neon PostgreSQL con pool optimizado y frontend en Angular 22 migrado a Signals con ChangeDetectionStrategy.OnPush.",
+    metricas: [
+      { valor: "58ms", etiqueta: "Latencia p95 en endpoints críticos" },
+      { valor: "0%", etiqueta: "Tasa de errores en peticiones HTTP" },
+      { valor: "100%", etiqueta: "Componentes OnPush reactivos" }
+    ],
+    stack: [".NET 9", "C#", "Angular 22", "Signals", "Neon PostgreSQL", "Redis TTL"]
+  },
+  {
+    id: "parcha2-microservicios",
+    cliente: "PARCHA2 Distributed Platform",
+    rol: "Ingeniero Cloud & Backend Specialist",
+    desafio: "Picos de concurrencia durante eventos masivos amenazaban con saturar la infraestructura monolítica, requiriendo aislamiento de la pasarela social y procesamiento asíncrono sin caídas.",
+    solucion: "Arquitectura de microservicios con Express API Gateway como enrutador y balanceador, microservicios modulares en Django REST, persistencia en PostgreSQL 18 e infraestructura containerizada en Docker Compose multi-stage sobre Oracle Cloud (OCI).",
+    metricas: [
+      { valor: "0.00%", etiqueta: "Errores 500 bajo estrés concurrente" },
+      { valor: "&lt; 3 min", etiqueta: "Tiempo de despliegue automatizado OCI" },
+      { valor: "3N Form", etiqueta: "Normalización de schemas y 0 scans" }
+    ],
+    stack: ["Django REST", "Express Gateway", "PostgreSQL 18", "Docker OCI", "Redis Cache"]
+  },
+  {
+    id: "landing-engine-astro",
+    cliente: "Motor Web de Conversión",
+    rol: "Arquitecto Frontend & Rendimiento",
+    desafio: "Los frameworks SPA convencionales cargaban bundles superiores a 500KB en la primera visita, deteriorando el First Contentful Paint (FCP) en dispositivos móviles y reduciendo la conversión de clientes.",
+    solucion: "Arquitectura de islas estáticas con Astro 5 y Tailwind CSS v4, eliminando todo JavaScript innecesario del HTML inicial y reservando React 19 estrictamente para widgets interactivos hidratados de forma diferida (`client:visible`).",
+    metricas: [
+      { valor: "100/100", etiqueta: "Score Google Lighthouse (4 categorías)" },
+      { valor: "0.4s", etiqueta: "First Contentful Paint (FCP)" },
+      { valor: "-92%", etiqueta: "Reducción en payload JS transferido" }
+    ],
+    stack: ["Astro 5", "React 19 Islands", "Tailwind v4", "TypeScript", "Vite"]
+  }
+];
+---
+
+<section id="casos-estudio" class="py-16 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto">
+  <!-- Encabezado de Sección -->
+  <div class="mb-12 pb-6 border-b border-white/[0.08]">
+    <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 block mb-2">
+      Rigor Técnico & Métricas Auditadas
+    </span>
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+      Casos de Estudio de Alto Rendimiento
+    </h2>
+    <p class="text-slate-400 text-sm sm:text-base max-w-2xl mt-2 font-normal">
+      Cada proyecto es un desafío de ingeniería resuelto con fundamentos sólidos: sin conjeturas, con métricas comprobables en producción y código limpio.
+    </p>
+  </div>
+
+  <!-- Lista Estructurada de Casos -->
+  <div class="space-y-8">
+    {casos.map((caso, index) => (
+      <div class="rounded-3xl p-7 sm:p-10 bg-[#0F121C] border border-white/[0.08] relative overflow-hidden">
+        <!-- Badge Superior & Index -->
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded-lg bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center text-xs font-mono font-bold text-cyan-300">
+              0{index + 1}
+            </span>
+            <span class="text-xs font-mono uppercase tracking-wider text-slate-400">
+              {caso.rol}
+            </span>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-white/[0.04] border border-white/[0.08] text-white">
+            {caso.cliente}
+          </span>
+        </div>
+
+        <!-- Cuerpo: Desafío vs Solución -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+          <!-- Desafío & Solución (8 Cols) -->
+          <div class="lg:col-span-8 space-y-5">
+            <div class="p-4 sm:p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05]">
+              <span class="text-[11px] font-mono uppercase text-amber-400/90 font-bold block mb-1.5 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                El Desafío / Cuello de Botella
+              </span>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                {caso.desafio}
+              </p>
+            </div>
+
+            <div class="p-4 sm:p-5 rounded-2xl bg-cyan-950/20 border border-cyan-500/20">
+              <span class="text-[11px] font-mono uppercase text-cyan-300 font-bold block mb-1.5 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                La Decisión de Arquitectura
+              </span>
+              <p class="text-slate-200 text-xs sm:text-sm leading-relaxed">
+                {caso.solucion}
+              </p>
+            </div>
+
+            <!-- Stack Tags -->
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              {caso.stack.map((tech) => (
+                <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-white/[0.04] border border-white/[0.08] text-slate-300">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <!-- Métricas de Impacto (4 Cols) -->
+          <div class="lg:col-span-4 flex flex-col justify-center gap-3 bg-white/[0.02] p-5 sm:p-6 rounded-2xl border border-white/[0.05]">
+            <span class="text-[11px] font-mono uppercase text-slate-400 font-bold block mb-1">
+              Impacto Medible
+            </span>
+            {caso.metricas.map((metrica) => (
+              <div class="p-3 rounded-xl bg-[#090A0F] border border-white/[0.06]">
+                <div class="text-xl sm:text-2xl font-black font-mono text-emerald-400" set:html={metrica.valor} />
+                <div class="text-[11px] text-slate-400 font-mono mt-0.5">
+                  {metrica.etiqueta}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

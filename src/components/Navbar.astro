@@ -1,0 +1,41 @@
+---
+interface Props {
+  nombre?: string;
+}
+
+const { nombre = "Sebastian" } = Astro.props;
+---
+
+<header class="sticky top-0 z-50 backdrop-blur-xl bg-[#090A0F]/80 border-b border-white/[0.08] transition-all">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <!-- Brand / Status -->
+    <a href="#" class="flex items-center gap-2.5 group">
+      <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-cyan-500 to-indigo-600 flex items-center justify-center text-slate-950 font-black text-xs shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+        S
+      </div>
+      <div>
+        <span class="font-bold text-sm tracking-tight text-white group-hover:text-cyan-400 transition-colors">
+          {nombre}
+        </span>
+        <span class="text-[10px] text-slate-400 block font-mono -mt-0.5">Software Architect</span>
+      </div>
+    </a>
+
+    <!-- Nav Links -->
+    <nav class="hidden md:flex items-center gap-7 text-xs font-medium text-slate-300">
+      <a href="#soluciones" class="hover:text-cyan-400 transition-colors">Productos a la Medida</a>
+      <a href="#casos-estudio" class="hover:text-cyan-400 transition-colors">Casos de Estudio</a>
+      <a href="#cotizador" class="hover:text-cyan-400 transition-colors">Cotizador en Vivo</a>
+    </nav>
+
+    <!-- CTA Button con Emil Kowalski tactile physics -->
+    <div class="flex items-center gap-3">
+      <a
+        href="#cotizador"
+        class="btn-tactile text-xs font-bold px-4 py-2 rounded-xl bg-cyan-400 text-slate-950 hover:bg-cyan-300 shadow-md shadow-cyan-500/20 flex items-center gap-1.5"
+      >
+        <span>⚡ Cotizar Proyecto</span>
+      </a>
+    </div>
+  </div>
+</header>
