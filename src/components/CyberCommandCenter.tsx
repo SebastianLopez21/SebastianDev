@@ -349,7 +349,7 @@ export const CyberCommandCenter: React.FC = () => {
               </div>
               <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-cyan-400 to-emerald-400 transition-all duration-300"
+                  className="h-full bg-gradient-to-r from-cyan-400 to-emerald-400 transition-[width] duration-300 ease-out"
                   style={{ width: `${benchmarkProgress}%` }}
                 ></div>
               </div>

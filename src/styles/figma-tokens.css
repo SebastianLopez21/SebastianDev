@@ -1,0 +1,28 @@
+/* ==============================================================================
+   Design Tokens sincronizados desde Figma
+   ============================================================================== */
+
+:root {
+  /* Paleta Extraída */
+  --figma-bg-deep:             #07090E;
+  --figma-bg-surface:          #0C0F1A;
+  --figma-bg-surface-raised:   #121626;
+  --figma-border-subtle:       rgba(248, 250, 252, 0.08);
+
+  /* Acentos de Marca */
+  --figma-accent-primary:      #00F5FF;
+  --figma-accent-secondary:    #8B5CF6;
+  --figma-status-success:      #10B981;
+  --figma-status-warning:      #F59E0B;
+
+  /* Tipografías */
+  --figma-font-display:        'Outfit', sans-serif;
+  --figma-font-body:           'Plus Jakarta Sans', sans-serif;
+  --figma-font-mono:           'JetBrains Mono', monospace;
+
+  /* Radios de Curvatura (Figma Corner Radius) */
+  --figma-radius-sm:           8px;
+  --figma-radius-md:           16px;
+  --figma-radius-lg:           24px;
+  --figma-radius-full:         9999px;
+}
